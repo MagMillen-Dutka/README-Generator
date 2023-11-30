@@ -1,57 +1,88 @@
+
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license == "none") {
-    return '![Github license](https://img.shields.io/badge/License-MIT-yellow.svg';
-  }
-  return "";
+  // if (license !== "none") {
+  // return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`;
+  // }
+  if (license !== 'MIT') {
+     
+  return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`
+  } 
+  else if (license !== 'APACHE') {
+    
+    return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`
+  } 
+  else if (license !== 'Eclipse2.0') {
+   
+    return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`
+  } 
+else {
+    return ""; 
 }
+  }
+
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license == "none")
-  {
-    return  `\n[License](#license)\n`;
+  if (license !== "MIT") {
+  //   return `\n* [License](#license)\n`;
+  // }
+    return 'https://lbesson.mit-license.org/'
   }
+  else if (license !== 'APACHE') {
+    return 'https://opensource.org/licenses/Apache-2.0'
+  }
+  else if (license !== 'Eclipse2.0') {
+    return 'https://www.eclipse.org/legal/epl-2.0/' 
+  }  
   return "";
-}
+  }
 
-// TODO: Create a function that returns the license section of README
+  // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (license == "none") {
-    return `## License
+  if (license !== "none") {
+    return `## License 
     
-      ${license} license is to be used for this project.`;
+    This project uses the ${license} license, and a link for further information can be found by clicking the badge at the top of the README page.`
   }
-  return "";
-}
+    return "";
+  }
+
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+  ${renderLicenseBadge(data.license)}
+  ${renderLicenseSection(data.license)}
+  ${renderLicenseLink(data.license)}
+  
+  
  
-  ${renderLicenseBadge(data.license)};
+  
   
   ## Deployed Application URL
   ${data.link};
 
   ## Table of Contents
   * [Description](#description)
-  * [How to Use This Application](#HowtoUseThisApplication)
+  * [Usage](#usage)
+  * [Installation](#installation)
   * [Contributors](#contributors)
   * [Testing](#testing)
   * [Questions](#questions)
   
-  ${renderLicenseSection(data.license)};
-  ${renderLicenseLink(data.license)};
+
 
 
   ## Description
   ${data.description}
-  ## How to Use This Application:
+  ## Usage:
   ${data.usage}
+  ## Installation
+  ${data.installation}
   ## Contributors
   ${data.contribution}
   ## Testing
