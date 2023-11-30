@@ -2,7 +2,7 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license == "none") {
-    return '![Github license](https://img.shields.io/badges/license-${license}-yellowgreen.svg)';
+    return '![Github license](https://img.shields.io/badge/License-MIT-yellow.svg';
   }
   return "";
 }
@@ -12,7 +12,7 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   if (license == "none")
   {
-    return  `\n* [License](#license)\n`;
+    return  `\n[License](#license)\n`;
   }
   return "";
 }
@@ -23,7 +23,7 @@ function renderLicenseSection(license) {
   if (license == "none") {
     return `## License
     
-      Licenses within ${license} licens.`;
+      ${license} license is to be used for this project.`;
   }
   return "";
 }
@@ -32,10 +32,11 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   return `# ${data.title}
  
-  ${renderLicenseBadge(data.license)}
+  ${renderLicenseBadge(data.license)};
   
   ## Deployed Application URL
-  ${data.link}
+  ${data.link};
+
   ## Table of Contents
   * [Description](#description)
   * [How to Use This Application](#HowtoUseThisApplication)
@@ -43,6 +44,10 @@ function generateMarkdown(data) {
   * [Testing](#testing)
   * [Questions](#questions)
   
+  ${renderLicenseSection(data.license)};
+  ${renderLicenseLink(data.license)};
+
+
   ## Description
   ${data.description}
   ## How to Use This Application:
@@ -52,10 +57,7 @@ function generateMarkdown(data) {
   ## Testing
   ${data.testing}
   ## Questions
-  Please get in touch via email - ${data.email} or visit [github/${data.username}](https://github.com/${data.username}) if you have any questions.
+  Please get in touch via email: ${data.email} or visit [github/${data.username}](https://github.com/${data.username}) if you have any questions.
   `;
   }
-`;
-}
-
 module.exports = generateMarkdown;

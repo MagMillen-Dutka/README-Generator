@@ -1,8 +1,8 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const generateMarkdown = require ('./utils/generateMarkdown.js');
-const route = require('route');
-const { default: inquirer } = require('inquirer');
+const path = require('path');
+const inquirer = require('inquirer');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -10,6 +10,11 @@ const questions = [
         type: 'input',
         message: 'What is your project name?',
         name: 'title',
+      },
+      {
+        type: 'input',
+        message: 'Please write URL link to the deployed application',
+        name: 'link',
       },
       {
         type: 'input',
@@ -44,31 +49,26 @@ const questions = [
       },
       {
         type: 'input',
-        message: 'Please contact me if you have any questions about this README Generator.',
-        name: 'questions',
-      },
-      {
-        type: 'input',
         message: 'Please write your Github ID.',
         name: 'username',
       },
       {
         type: 'input',
-        message: 'Please your email address.',
+        message: 'Please write your email address.',
         name: 'email',
       },
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    return fs.writeFileSync(path.join(process.cwd(),filename),data);
+    return fs.writeFileSync(path.join(process.cwd(),fileName),data);
 }
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((responses) => {
-        console.log("Your professional README.md");
-        writeToFile('./Develop/README', generateMarkdown({responses}));
+        console.log("Your README.md file will now appear in your IDE");
+        writeToFile('./README/', generateMarkdown({responses}));
     });
 }
 // Function call to initialize app
