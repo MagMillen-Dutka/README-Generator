@@ -68,7 +68,7 @@ function writeToFile(name, data) {
 function init() {
     inquirer.prompt(questions).then((responses) => {
         console.log("Your README.md file will now appear in your IDE");
-        writeToFile('./README/', generateMarkdown(responses));
+        writeToFile('./output/README/', generateMarkdown(responses));
     });
 }
 // Function call to initialize app
