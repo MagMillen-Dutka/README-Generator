@@ -16,9 +16,7 @@ else {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-// let MIT = "MIT";
-// let APACHE = "APACHE";
-// let Eclipse = "Eclipse";
+
   if (license == "MIT") {
   return `https://opensource.org/licenses/MIT`;
   }
