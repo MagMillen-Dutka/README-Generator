@@ -1,4 +1,4 @@
-# READ
+# README GENERATOR
   ![License](https://img.shields.io/badge/License-Eclipse-yellow.svg)
 
   ## License 
@@ -8,7 +8,7 @@
   
   
   ## Deployed Application URL
-  ;
+  www.deployed.com;
 
   ## Table of Contents
   * [Description](#description)
@@ -19,15 +19,15 @@
   * [Questions](#questions)
   
   ## Description
-  
+  It's a project aimed at recreating Node.JS fundamentals by creating a back-end command line application.
   ## Usage:
-  
+  It is to be used as very, reliable and professional README.md generator for use on GitHub.
   ## Installation
-  
+  visit the deployed website, and you will be able to download the source code which can be stored on local devices, and run using the 'node index.js' command in  the user's terminal.
   ## Contributors
-  
+  Not applicable.
   ## Testing
-  
+  Test instructions currently being redefined and will be available shortly.
   ## Questions
-  Please get in touch via email:  or visit [github/](https://github.com/) if you have any questions.
+  Please get in touch via email: maguadutka@hotmail.com or visit [github/MagMillen-Dutka](https://github.com/MagMillen-Dutka) if you have any questions.
   
