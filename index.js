@@ -25,7 +25,7 @@ const questions = [
         type: 'list',
         message: 'Please select license type.',
         name: 'license',
-        choices: ["none", "MIT", "APACHE", "Eclipse2.0"],
+        choices: ["none", "MIT", "APACHE", "Eclipse"],
       },
       {
         type: 'input',
@@ -68,7 +68,7 @@ function writeToFile(name, data) {
 function init() {
     inquirer.prompt(questions).then((responses) => {
         console.log("Your README.md file will now appear in your IDE");
-        writeToFile('./README/', generateMarkdown({...responses}));
+        writeToFile('./README/', generateMarkdown(responses));
     });
 }
 // Function call to initialize app
