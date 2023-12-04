@@ -47,10 +47,10 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  
-  ${renderLicenseSection(data.license)}
   ${renderLicenseBadge(data.license)}
-  * ${renderLicenseLink(data.license)}
+
+  ${renderLicenseSection(data.license)}
+   * ${renderLicenseLink(data.license)}
   
   
   ## Deployed Application URL
